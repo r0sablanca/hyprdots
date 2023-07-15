@@ -3,6 +3,7 @@ bat
 blueman
 bluez
 bluez-utils
+brightnessctl
 btop
 cliphist
 dolphin
@@ -30,6 +31,7 @@ pipewire-audio
 pipewire-jack
 pipewire-pulse
 pkgfile
+playerctl
 plymouth
 polkit-kde-agent
 qt5-graphicaleffects
@@ -39,6 +41,7 @@ qt5-quickcontrols2
 qt5-wayland
 qt5ct
 qt6-wayland
+ripgrep
 rofi-lbonn-wayland-git
 sddm-git
 slurp
@@ -52,6 +55,7 @@ visual-studio-code-bin
 waybar-hyprland-git
 wireplumber
 wlogout
+xclip
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 zsh
