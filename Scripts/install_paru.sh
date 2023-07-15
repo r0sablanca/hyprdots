@@ -1,6 +1,6 @@
 #!/bin/bash
 #|---/ /+-----------------------------------+---/ /|#
-#|--/ /-| Script to install aur helper, yay |--/ /-|#
+#|--/ /-| Script to install aur helper, paru|--/ /-|#
 #|-/ /--| Prasanth Rangan                   |-/ /--|#
 #|/ /---+-----------------------------------+/ /---|#
 
@@ -10,7 +10,7 @@ if [ $? -ne 0 ] ; then
     exit 1
 fi
 
-if pkg_installed yay
+if pkg_installed paru
 then
     exit 0
 fi
@@ -18,7 +18,7 @@ fi
 if [ -d ~/Clone ]
 then
     echo "~/Clone directory exists..."
-    rm -rf ~/Clone/yay
+    rm -rf ~/Clone/pary
 else
     mkdir ~/Clone
     echo -e "[Desktop Entry]\nIcon=default-folder-git" > ~/Clone/.directory
@@ -27,13 +27,13 @@ fi
 
 if pkg_installed git
 then
-    git clone https://aur.archlinux.org/yay.git ~/Clone/yay
+    git clone https://aur.archlinux.org/paru.git ~/Clone/paru
 else
     echo "git dependency is not installed..."
     exit 1
 fi
 
-cd ~/Clone/yay
+cd ~/Clone/paru
 makepkg ${use_default} -si
 
 if [ $? -eq 0 ]
@@ -43,7 +43,7 @@ then
     exit 0
 else
     cd ~
-    echo "yay installation failed..."
+    echo "paru installation failed..."
     exit 1
 fi
 

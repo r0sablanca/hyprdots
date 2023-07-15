@@ -18,10 +18,10 @@ if ! pkg_installed git
     sudo pacman -S git
 fi
 
-if ! pkg_installed yay
+if ! pkg_installed paru
     then
-    echo "installing dependency yay..."
-    ./install_yay.sh 2>&1
+    echo "installing dependency pary..."
+    ./install_paru.sh 2>&1
 fi
 
 
@@ -56,6 +56,6 @@ fi
 if [ `echo $pkg_aur | wc -w` -gt 0 ]
 then
     echo "installing $pkg_aur from aur..."
-    yay ${use_default} -S $pkg_aur
+    paru ${use_default} -S $pkg_aur
 fi
 
