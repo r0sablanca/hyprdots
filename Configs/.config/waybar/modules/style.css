@@ -3,8 +3,8 @@
     border-radius: 0px;
     font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
-    font-size: initial;
-    min-height: 10px;
+    font-size: 18;
+    min-height: 20px;
 }
 
 @import "themes/${cur_theme}.css";
@@ -91,8 +91,10 @@ tooltip {
 }
 
 #cpu,
+#temperature,
 #memory,
 #battery,
+#backlight,
 #clock,
 #workspaces,
 #window,

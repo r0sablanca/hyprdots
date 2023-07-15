@@ -2,13 +2,13 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    // "height": 28,
+    // "height": 30,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
     "modules-left": ["custom/l_end","wlr/workspaces","hyprland/window","custom/r_end"],
     "modules-center": ["custom/l_end","clock","custom/r_end"],
-    "modules-right": ["custom/l_end","cpu","memory","battery","custom/r_end",
+    "modules-right": ["custom/l_end","cpu","temperature","memory","battery","custom/r_end",
         "custom/l_end","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/updates","custom/r_end",
         "custom/l_end","tray","custom/r_end",
         "custom/l_end","custom/wallchange","custom/mode","custom/wbar", "custom/cliphist","custom/power","custom/r_end"],
@@ -59,6 +59,14 @@
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
     },
 
+   	 "temperature": {
+		"thermal-zone": 0,
+		// "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+		"critical-threshold": 80,
+		"format-critical": " {temperatureC}°C",
+		"format": " {temperatureC}°C"
+	}.
+
     "memory": {
         "interval": 30,
         "format": "󰾆 {percentage}%",
@@ -86,6 +94,13 @@
         "format-disconnected": " Disconnected",
         "format-alt": "󰤨 {signalStrength}%",
         "interval": 5
+    },
+
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}",
+        "tooltip": false,
+        "format-icons": ["", "", ""]
     },
 
     "bluetooth": {
@@ -186,6 +201,57 @@
         "on-click-right": "~/.config/waybar/wbarswitch.sh -p",
         "interval" : 86400,
         "tooltip": true
+    },
+
+    "custom/left": {
+        "format": "<b>{}</b>",
+        "tooltip": false,
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/privacy-test.sh l"
+    },
+    
+    "custom/right": {
+        "format": "<b>{}</b>",
+        "tooltip": false,
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/privacy-test.sh r"
+    },
+    
+    "custom/priv-speaker": {
+        "format": "<b>{}</b>",
+        "tooltip": false,
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/privacy-test.sh S"
+    },
+    
+    "custom/priv-mic": {
+        "format": "<b>{}</b>",
+        "tooltip": false,
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/privacy-test.sh M"
+    },
+    
+    "custom/priv-cam": {
+        "format": "<b>{}</b>",
+        "tooltip": false,
+        "interval": 1,
+        "exec": "~/.config/waybar/scripts/privacy-test.sh C"
+    },
+      
+    "battery": {
+        "bat": "BAT0",
+        "interval": 30,
+        "states": {
+          "good": 95,
+          "warning": 30,
+          "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {icon} {capacity}%",
+        "format-plugged": " {icon} {capacity}%",
+        "format-icons": [" ", " ", " ", " "],
+        "max-length": 25,
+        "tooltip": false
     },
 
     "custom/l_end": {

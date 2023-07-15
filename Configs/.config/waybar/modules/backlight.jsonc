@@ -1,0 +1,6 @@
+    "backlight": {
+        "device": "amdgpu_bl1",
+        "format": "{icon} {percent}",
+        "tooltip": false,
+        "format-icons": ["󰃞", "󰃟", "󰃠"]
+    },
